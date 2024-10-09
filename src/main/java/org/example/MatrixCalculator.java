@@ -44,4 +44,20 @@ public class MatrixCalculator {
         }
         return transposedMatrix;
     }
+
+    public long sumOfMinInColumns(long[][] matrix) {
+        long sum = 0;
+
+        for (int j = 0; j < matrix[0].length; j++) {
+            long min = matrix[0][j];
+
+            for (int i = 1; i < matrix.length; i++) {
+                if (matrix[i][j] < min) {
+                    min = matrix[i][j];
+                }
+            }
+            sum += min;
+        }
+        return sum;
+    }
 }
